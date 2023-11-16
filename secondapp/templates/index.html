@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    {% for i in p %}
+    <div class="col-md-6">
+       <a href="{% url 'secondapp:detail' i.id i.slug %}" ><b>{{i.title}}</b></a><br>
+        <img src="{{i.img.url}}" width=300 height=300 alt=""><br>
+        ₹{{i.price}}<br>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
